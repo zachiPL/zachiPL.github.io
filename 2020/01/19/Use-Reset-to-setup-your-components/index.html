@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="Short infoThe Reset Unity message can be used to setup SerializeField fields of your prefabs.">
+<meta name="description" content="The Reset Unity message can be used to setup SerializeField fields of your prefabs.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Use Reset to setup your components">
 <meta property="og:url" content="https://zachipl.github.io/2020/01/19/Use-Reset-to-setup-your-components/index.html">
 <meta property="og:site_name" content="Some coding tips">
-<meta property="og:description" content="Short infoThe Reset Unity message can be used to setup SerializeField fields of your prefabs.">
+<meta property="og:description" content="The Reset Unity message can be used to setup SerializeField fields of your prefabs.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-19T08:46:48.000Z">
-<meta property="article:modified_time" content="2020-01-19T21:57:55.155Z">
+<meta property="article:modified_time" content="2020-01-23T19:44:12.311Z">
 <meta property="article:author" content="Szymon Zachara">
 <meta property="article:tag" content="unity">
 <meta property="article:tag" content="editor">
@@ -323,7 +323,7 @@
       
 
       
-        <h2 id="Short-info"><a href="#Short-info" class="headerlink" title="Short info"></a>Short info</h2><p>The <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.Reset.html" target="_blank" rel="noopener"><code>Reset</code> Unity message</a> can be used to setup <code>SerializeField</code> fields of your prefabs.</p>
+        <p>The <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.Reset.html" target="_blank" rel="noopener"><code>Reset</code> Unity message</a> can be used to setup <code>SerializeField</code> fields of your prefabs.</p>
 <a id="more"></a>
 <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Many times I see something like that:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">RequireComponent(typeof(Text))</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">MyLabel</span> : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line">    [<span class="meta">SerializeField</span>] Text _label;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Awake</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        _label = GetComponent&lt;Text&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// rest of the code...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -508,7 +508,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Short-info"><span class="nav-number">1.</span> <span class="nav-text">Short info</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">2.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">3.</span> <span class="nav-text">Solution</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li></ol></div>
             
 
           </div>
