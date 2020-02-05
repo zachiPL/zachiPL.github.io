@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="unity,testing,editor," />
+  <meta name="keywords" content="C#," />
 
 
 
@@ -79,22 +79,18 @@
 
 
 
-<meta name="description" content="You can call MonoBehaviour method in Inspector by adding it’s property Context Menu.">
+<meta name="description" content="In fact, you should write as little comments as possible.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Test by ContextMenuItem">
-<meta property="og:url" content="https://zachipl.github.io/2020/01/26/Test-by-ContextMenuItem/index.html">
+<meta property="og:title" content="Don&#39;t comment the obvious code">
+<meta property="og:url" content="https://zachipl.github.io/2020/02/05/Don-t-comment-the-obvious/index.html">
 <meta property="og:site_name" content="Some coding tips">
-<meta property="og:description" content="You can call MonoBehaviour method in Inspector by adding it’s property Context Menu.">
+<meta property="og:description" content="In fact, you should write as little comments as possible.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zachipl.github.io/content/images/contextmenuitem.png">
-<meta property="article:published_time" content="2020-01-26T06:26:34.000Z">
-<meta property="article:modified_time" content="2020-01-26T06:33:11.940Z">
+<meta property="article:published_time" content="2020-02-05T16:19:29.000Z">
+<meta property="article:modified_time" content="2020-02-05T17:17:44.463Z">
 <meta property="article:author" content="Szymon Zachara">
-<meta property="article:tag" content="unity">
-<meta property="article:tag" content="testing">
-<meta property="article:tag" content="editor">
+<meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zachipl.github.io/content/images/contextmenuitem.png">
 
 
 
@@ -124,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://zachipl.github.io/2020/01/26/Test-by-ContextMenuItem/"/>
+  <link rel="canonical" href="https://zachipl.github.io/2020/02/05/Don-t-comment-the-obvious/"/>
 
 
 
 
 
-  <title>Test by ContextMenuItem | Some coding tips</title>
+  <title>Don't comment the obvious code | Some coding tips</title>
   
 
 
@@ -237,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/01/26/Test-by-ContextMenuItem/">
+    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/02/05/Don-t-comment-the-obvious/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Szymon Zachara">
@@ -254,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Test by ContextMenuItem</h1>
+          <h1 class="post-title" itemprop="name headline">Don't comment the obvious code</h1>
         
 
         <div class="post-meta">
@@ -266,8 +262,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-26T07:26:34+01:00">
-                2020-01-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-05T17:19:29+01:00">
+                2020-02-05
               </time>
             
 
@@ -326,16 +322,37 @@
       
 
       
-        <p>You can call <code>MonoBehaviour</code> method in Inspector by adding it’s property Context Menu.</p>
+        <p>In fact, you should write as little comments as possible.</p>
 <a id="more"></a>
 
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>There is a <em>FinalBoss</em> on my scene, that is very hard to kill when playing the game and I’m trying to code in all the animations and effects and other things that should happen when he dies.<br>I’ve got the method <code>BossKilled()</code> that’s called when his HP drops to zero, and I just want to test the method everytime I change something in code.<br>I could of course mess with health system, but let’s say it’s complicated, and I’m too lazy or tired to do that. Just want to test that one method.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>There’s an attribute for calling method directly on <code>MonoBehaviour</code> from inspector, and it’s <a href="https://docs.unity3d.com/ScriptReference/ContextMenuItemAttribute.html" target="_blank" rel="noopener"><code>ContextMenuItem</code> attribute</a>.</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">FinalBoss</span> : <span class="title">MonoBehaviour</span> &#123;</span><br><span class="line">    [<span class="meta">ContextMenuItem(<span class="meta-string">"Kill"</span>, nameof(BossKilled))</span>]</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">string</span> cheats;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">BossKilled</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>    &#123;</span><br><span class="line">        <span class="comment">// do awesome stuff here</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>It’s <code>PropertyAttribute</code>, so you need some property visible in Inspector to bind your menu there (the <code>cheats</code> property in my case). The context menu is accessible by right clicking on property name label in inspector.</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">ContextMenuItem(<span class="meta-string">"Kill"</span>, nameof(BossKilled))</span>]</span><br><span class="line">[<span class="meta">ContextMenuItem(<span class="meta-string">"Full Health"</span>, nameof(Heal))</span>]</span><br><span class="line">[<span class="meta">ContextMenuItem(<span class="meta-string">"Special Attack"</span>, nameof(SpecialAttack))</span>]</span><br><span class="line">[<span class="meta">ContextMenuItem(<span class="meta-string">"Spawn Minions"</span>, nameof(CreateMinions))</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">string</span> cheats;</span><br><span class="line"><span class="comment">//...</span></span><br></pre></td></tr></table></figure>
-<p><img src="/content/images/contextmenuitem.png" alt="Context menu item looks like that"></p>
-<h2 id="Have-in-mind-…"><a href="#Have-in-mind-…" class="headerlink" title="Have in mind …"></a>Have in mind …</h2><p>The solution here works great for small projects and when you want to test something fast in editor. When you’re working on bigger project consider making some cheat/debug system that works on target platform. Or find one in Asset Store.</p>
+<h2 id="Basics"><a href="#Basics" class="headerlink" title="Basics"></a>Basics</h2><p>Comments are great tool and are very helpful when you learn to code or code you are working on is hard to read, but with time and practice you will read and understand code faster than you could read code comments.  </p>
+<p>Also:</p>
+<ul>
+<li><p>by not writing comments you will learn to write <em>self commenting code</em>. Lets try this example:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/** calculates volume of a cylinder */</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">Calc</span>(<span class="params"><span class="keyword">float</span> v1, <span class="keyword">float</span> v2</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Mathf.PI * v1 * v1 * v2;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now, you can make a few mistakes when using that method, is <code>v1</code> a cylinder height or is it a <code>h2</code>? Also, you need to read a comment to see what this method relly do. Try the opposite:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">float</span> <span class="title">CalculateCylinderVolume</span>(<span class="params"><span class="keyword">float</span> radius, <span class="keyword">float</span> height</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> Mathf.PI * radius * radius * height;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Much better.  </p>
+</li>
+<li><p>Comments can lie, code not.<br>See my favourite:  </p>
+<pre><code class="C#"><span class="comment">/** Adds two integers */</span>
+<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">Calculate</span>(<span class="params"><span class="keyword">int</span> i1, <span class="keyword">int</span> i2</span>)</span>
+<span class="function"></span>{
+  <span class="keyword">return</span> i1 - i2;
+}</code></pre>
+<p>Of course this one is easy, but imagine more complicated algorithm, when instead of reading actual code you read the comment and assume code is doing what comment says. That happens often when first programmer writes the method and the comment, then second one changes the method, but leaves the comment untouched. That leads us to:</p>
+</li>
+<li><p>Comments needs to be maintained, just as the code is.<br>More code leads to more little things to care about when maintaing the system. That is also true for comments. The less code and comments you must write the easier maintenance of the system is.</p>
+</li>
+</ul>
+<h2 id="So-should-you-use-comments-at-all"><a href="#So-should-you-use-comments-at-all" class="headerlink" title="So should you use comments at all?"></a>So should you use comments at all?</h2><p><strong>Yes.</strong>  </p>
+<p>There are few things that you should explain in your code.</p>
+<ul>
+<li>The hard to understand (low-level? heavy optimized?) code blocks.</li>
+<li>Things that looks like errors but are intentional.</li>
+<li>Methods that do more than they name suggests.</li>
+</ul>
+<p>Also, when commenting your methods declaration use the style that are recognized by your IDE.<br>For C# it should be <code>/// ...</code>, but i prefer the javadoc comment blocks: <code>/** ... */</code>  (and most IDE’s recognize that one as well).</p>
 
       
     </div>
@@ -353,11 +370,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/unity/" rel="tag"># unity</a>
-          
-            <a href="/tags/testing/" rel="tag"># testing</a>
-          
-            <a href="/tags/editor/" rel="tag"># editor</a>
+            <a href="/tags/C/" rel="tag"># C#</a>
           
         </div>
       
@@ -370,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/23/Mark-unused-classes-as-Obsolete/" rel="next" title="Mark unused classes as Obsolete">
-                <i class="fa fa-chevron-left"></i> Mark unused classes as Obsolete
+              <a href="/2020/01/26/Test-by-ContextMenuItem/" rel="next" title="Test by ContextMenuItem">
+                <i class="fa fa-chevron-left"></i> Test by ContextMenuItem
               </a>
             
           </div>
@@ -379,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/05/Don-t-comment-the-obvious/" rel="prev" title="Don't comment the obvious code">
-                Don't comment the obvious code <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -514,7 +523,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Have-in-mind-…"><span class="nav-number">3.</span> <span class="nav-text">Have in mind …</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basics"><span class="nav-number">1.</span> <span class="nav-text">Basics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#So-should-you-use-comments-at-all"><span class="nav-number">2.</span> <span class="nav-text">So should you use comments at all?</span></a></li></ol></div>
             
 
           </div>
