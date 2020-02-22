@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="unity,editor," />
+  <meta name="keywords" content="unity,testing,logging," />
 
 
 
@@ -79,21 +79,20 @@
 
 
 
-<meta name="description" content="The Obsolete attrbute marks MonoBehaviour classes in Inspector.">
+<meta name="description" content="You can combine compiler directives with ConditionalAttribute to filter your Debug output.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Mark unused classes as Obsolete">
-<meta property="og:url" content="https://zachipl.github.io/2020/01/23/Mark-unused-classes-as-Obsolete/index.html">
+<meta property="og:title" content="Compilation dependent logging">
+<meta property="og:url" content="https://zachipl.github.io/2020/02/22/Compilation-dependent-logging/index.html">
 <meta property="og:site_name" content="Some coding tips">
-<meta property="og:description" content="The Obsolete attrbute marks MonoBehaviour classes in Inspector.">
+<meta property="og:description" content="You can combine compiler directives with ConditionalAttribute to filter your Debug output.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://zachipl.github.io/content/images/mark_unused_classes_as_obsolete.png">
-<meta property="article:published_time" content="2020-01-23T09:06:01.000Z">
-<meta property="article:modified_time" content="2020-01-23T19:44:05.270Z">
+<meta property="article:published_time" content="2020-02-22T02:52:37.000Z">
+<meta property="article:modified_time" content="2020-02-22T02:52:37.364Z">
 <meta property="article:author" content="Szymon Zachara">
 <meta property="article:tag" content="unity">
-<meta property="article:tag" content="editor">
+<meta property="article:tag" content="testing">
+<meta property="article:tag" content="logging">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://zachipl.github.io/content/images/mark_unused_classes_as_obsolete.png">
 
 
 
@@ -123,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="https://zachipl.github.io/2020/01/23/Mark-unused-classes-as-Obsolete/"/>
+  <link rel="canonical" href="https://zachipl.github.io/2020/02/22/Compilation-dependent-logging/"/>
 
 
 
 
 
-  <title>Mark unused classes as Obsolete | Some coding tips</title>
+  <title>Compilation dependent logging | Some coding tips</title>
   
 
 
@@ -236,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/01/23/Mark-unused-classes-as-Obsolete/">
+    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/02/22/Compilation-dependent-logging/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Szymon Zachara">
@@ -253,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Mark unused classes as Obsolete</h1>
+          <h1 class="post-title" itemprop="name headline">Compilation dependent logging</h1>
         
 
         <div class="post-meta">
@@ -265,8 +264,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-23T10:06:01+01:00">
-                2020-01-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-22T03:52:37+01:00">
+                2020-02-22
               </time>
             
 
@@ -325,11 +324,24 @@
       
 
       
-        <p>The <code>Obsolete</code> attrbute marks <code>MonoBehaviour</code> classes in Inspector.</p>
+        <p>You can combine compiler directives with <code>ConditionalAttribute</code> to filter your Debug output.</p>
 <a id="more"></a>
-<h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><p>There is the nice <a href="https://docs.microsoft.com/en-us/dotnet/api/system.obsoleteattribute?view=netframework-4.8" target="_blank" rel="noopener"><code>Obsolete</code> attribute</a> that marks classes and members that shouldn’t be used (and are kept in code only for compatibility, referential or other reasons).<br>Whenever programmer want to use something deprecated in code, the IDE should show him a Warning. Another warning is shown during compilation (you read them? compilation warnings?).<br>Anyway, the code to mark class as <code>Obsolete</code> goes like this:</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">Obsolete(<span class="meta-string">"keeping that for now for historical reasons, may be usefull during merge"</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">OldChapterView</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>And unity shows that class in Inspector like this:<br><img src="/content/images/mark_unused_classes_as_obsolete.png" alt="Obsolete attribute as seen in inspector"></p>
+<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Simple <code>Debug.Log()</code> statement is often the fastest way to understood when code is invoked and what parameters are passed to the methods. There’s a moments when you work with fubar code and want to use a lot of logging, but don’t want this logs in production builds. So maybe you know about the clever <a href="https://docs.unity3d.com/Manual/class-PlayerSettingsStandalone.html#Logging" target="_blank" rel="noopener">logging settings</a> delivered by Unity, so your logs will be disabled in production build.<br>But what if you have so many logs in your debug builds that they’re unreadable and logging affects performance to the level of game being unplayable?</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>I will go through few solutions I’ve been using the last few years.</p>
+<h3 id="Conditional-solution"><a href="#Conditional-solution" class="headerlink" title="Conditional solution"></a>Conditional solution</h3><p>Just wrap your Debug statements with <code>if</code>s. Not the most elegant solution, but works.</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(debugMyModule) &#123;</span><br><span class="line">    Debug.Log(<span class="string">$"<span class="subst">&#123;<span class="keyword">nameof</span>(MyModule)&#125;</span>:<span class="subst">&#123;<span class="keyword">nameof</span>(MyMethod)&#125;</span> invoked."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>When using this way you can have few <code>debug***Module</code> flags in system and switch them during runtime.<br>Downside is that all this <code>if</code> statements still will be present in builds.</p>
+<h3 id="Compilation-conditional-debugging"><a href="#Compilation-conditional-debugging" class="headerlink" title="Compilation conditional debugging"></a>Compilation conditional debugging</h3><p>For some time now I’m wrapping my debug statements with <code>#if</code> compilation flags. So my logging changes from this:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Debug.Log(<span class="string">$"<span class="subst">&#123;<span class="keyword">nameof</span>(MyMethod)&#125;</span> invoked with param <span class="subst">&#123;<span class="keyword">nameof</span>(param1)&#125;</span> : <span class="subst">&#123;param1&#125;</span>"</span>);</span><br></pre></td></tr></table></figure>
+<p>to this:</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">if</span> DEBUG_MY_MODULE</span></span><br><span class="line">    Debug.Log(<span class="string">$"<span class="subst">&#123;<span class="keyword">nameof</span>(MyMethod)&#125;</span> invoked with param <span class="subst">&#123;<span class="keyword">nameof</span>(param1)&#125;</span> : <span class="subst">&#123;param1&#125;</span>"</span>);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>The obvious plus is that I can enable/disable logging of varios modules by just adding/removing compilation flags. Not during runtime like in previous solution, but it’s still quite flexible.<br>Second to that - these lines are not even compiled in when you build production.  </p>
+<p>The downside is that this code becomes <em>a little</em> less readable. Maybe not when you have one <code>#if</code> statement in some method, but with four or five - it became much harder to read that code.</p>
+<h3 id="Clear-conditional-debugging"><a href="#Clear-conditional-debugging" class="headerlink" title="Clear conditional debugging"></a>Clear conditional debugging</h3><p>This solution is another variation. Instead of placing <code>#if</code>s in code we can remove the debugging method and all calls to it from build during compilation.<br>The magic way to do that is by using C# <code>ConditionalAttribute</code></p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">Conditional(<span class="meta-string">"DEBUG_MY_MODULE"</span>)</span>]</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CDebugLog</span>(<span class="params"><span class="keyword">string</span> log</span>)</span> &#123;</span><br><span class="line">    Debug.Log(log);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// and somewhere else in code you call this method normally</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    CDebugLog(<span class="string">"myscript started, gameobject name is "</span> + gameObject.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>That works exactly like the conditional debugging with compilation flag, but instead using <code>#if</code> everytime we want to print some debug we can instead mark the method with attribute, and if the conditional flag (<code>DEBUG_MY_MODULE</code> in this example) is not set not only the method, but all calls to that method is taken out of compilation process.</p>
+<p>Remember to be careful when using conditional compilation - you can end up with so many flags and <code>#if</code>‘s so it could be hard to tell what code is compiled in what type of build.</p>
 
       
     </div>
@@ -349,7 +361,9 @@
           
             <a href="/tags/unity/" rel="tag"># unity</a>
           
-            <a href="/tags/editor/" rel="tag"># editor</a>
+            <a href="/tags/testing/" rel="tag"># testing</a>
+          
+            <a href="/tags/logging/" rel="tag"># logging</a>
           
         </div>
       
@@ -362,8 +376,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/01/19/Use-Reset-to-setup-your-components/" rel="next" title="Use Reset to setup your components">
-                <i class="fa fa-chevron-left"></i> Use Reset to setup your components
+              <a href="/2020/02/10/Test-serializaiton/" rel="next" title="Test serializaiton">
+                <i class="fa fa-chevron-left"></i> Test serializaiton
               </a>
             
           </div>
@@ -371,10 +385,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/01/26/Test-by-ContextMenuItem/" rel="prev" title="Test by ContextMenuItem">
-                Test by ContextMenuItem <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -506,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Explanation"><span class="nav-number">1.</span> <span class="nav-text">Explanation</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem"><span class="nav-number">1.</span> <span class="nav-text">Problem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-number">2.</span> <span class="nav-text">Solution</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Conditional-solution"><span class="nav-number">2.1.</span> <span class="nav-text">Conditional solution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Compilation-conditional-debugging"><span class="nav-number">2.2.</span> <span class="nav-text">Compilation conditional debugging</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Clear-conditional-debugging"><span class="nav-number">2.3.</span> <span class="nav-text">Clear conditional debugging</span></a></li></ol></li></ol></div>
             
 
           </div>
