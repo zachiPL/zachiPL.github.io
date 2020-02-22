@@ -226,86 +226,24 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/02/10/Test-serializaiton/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Test serializaiton</h1>
-        
+	<h1 class="post-title" itemprop="name headline">Test serializaiton</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-10T19:17:30+01:00">
-                2020-02-10
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>You can check if your datas are serialized and deserialized with very little code.</p>
+      <div class="post-body">
+        
+        
+          <p>You can check if your datas are serialized and deserialized with very little code.</p>
 <a id="more"></a>
 
 <h2 id="Why-would-you-want-to-do-it"><a href="#Why-would-you-want-to-do-it" class="headerlink" title="Why would you want to do it?"></a>Why would you want to do it?</h2><p>Imagine a strategy game with <em>save</em> option. At any time player <em>can</em> trigger save routine and write all the gamestate to disk (or some cloud storage) and read it later to continue the game.<br>During developement of the game our classes holding the data will changes and any of this change could make player’s progress unwritable or unreadable. How about a fast way to check if the newest change didn’t broke the <em>save</em> functionallity.</p>
@@ -321,86 +259,17 @@
 
 <p>well, that’s all. Of course instead JsonUtility you can use your own (de)serialization tool.<br>Your test can be runned anytime from <code>Window -&gt; General -&gt; Test Runner</code> window. Make sure to run it from time to time ;-)</p>
 
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/C/" rel="tag"># C#</a>
-          
-            <a href="/tags/Unity/" rel="tag"># Unity</a>
-          
-            <a href="/tags/Tests/" rel="tag"># Tests</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/02/05/Don-t-comment-the-obvious/" rel="next" title="Don't comment the obvious code">
-                <i class="fa fa-chevron-left"></i> Don't comment the obvious code
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/22/Compilation-dependent-logging/" rel="prev" title="Compilation dependent logging">
-                Compilation dependent logging <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
-
-    
-      <div id="gitment-comments"></div>    
-    
-    <div class="post-spread">
-      
-    </div>
-  </div>
-<script>
-const gitment = new Gitment({
-    id: '<%= page.title.replace(/[^\w\s]/gi, '').substring(0, 49) %>',
-    owner: 'zachiPL',
-    repo: 'zachiPL.github.io',
-    oauth: {
-        client_id: '<%= theme.comments.gitment.clientId %>',
-        client_secret: '<%= theme.comments.gitment.clientSecret %>'
-    }
-});
-gitment.render(document.getElementById('gitment-comments'));
-</script>
 
           </div>
           
