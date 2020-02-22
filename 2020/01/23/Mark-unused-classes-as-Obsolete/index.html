@@ -227,178 +227,38 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/01/23/Mark-unused-classes-as-Obsolete/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Mark unused classes as Obsolete</h1>
-        
+	<h1 class="post-title" itemprop="name headline">Mark unused classes as Obsolete</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-23T10:06:01+01:00">
-                2020-01-23
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tips/" itemprop="url" rel="index">
-                    <span itemprop="name">tips</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>The <code>Obsolete</code> attrbute marks <code>MonoBehaviour</code> classes in Inspector.</p>
+      <div class="post-body">
+        
+        
+          <p>The <code>Obsolete</code> attrbute marks <code>MonoBehaviour</code> classes in Inspector.</p>
 <a id="more"></a>
 <h2 id="Explanation"><a href="#Explanation" class="headerlink" title="Explanation"></a>Explanation</h2><p>There is the nice <a href="https://docs.microsoft.com/en-us/dotnet/api/system.obsoleteattribute?view=netframework-4.8" target="_blank" rel="noopener"><code>Obsolete</code> attribute</a> that marks classes and members that shouldn’t be used (and are kept in code only for compatibility, referential or other reasons).<br>Whenever programmer want to use something deprecated in code, the IDE should show him a Warning. Another warning is shown during compilation (you read them? compilation warnings?).<br>Anyway, the code to mark class as <code>Obsolete</code> goes like this:</p>
 <figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">Obsolete(<span class="meta-string">"keeping that for now for historical reasons, may be usefull during merge"</span>)</span>]</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">OldChapterView</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>And unity shows that class in Inspector like this:<br><img src="/content/images/mark_unused_classes_as_obsolete.png" alt="Obsolete attribute as seen in inspector"></p>
 
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/unity/" rel="tag"># unity</a>
-          
-            <a href="/tags/editor/" rel="tag"># editor</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/01/19/Use-Reset-to-setup-your-components/" rel="next" title="Use Reset to setup your components">
-                <i class="fa fa-chevron-left"></i> Use Reset to setup your components
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/01/26/Test-by-ContextMenuItem/" rel="prev" title="Test by ContextMenuItem">
-                Test by ContextMenuItem <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-<% if(page.comments && theme.comments && theme.comments.gitment){ %>
-    <div id="gitment-comments"></div>    
-<% } %>
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 

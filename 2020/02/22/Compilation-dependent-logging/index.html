@@ -226,108 +226,24 @@
 
   <div id="posts" class="posts-expand">
     
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/02/22/Compilation-dependent-logging/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-
     
+    
+    <div class="post-block page">
       <header class="post-header">
 
-        
-        
-          <h1 class="post-title" itemprop="name headline">Compilation dependent logging</h1>
-        
+	<h1 class="post-title" itemprop="name headline">Compilation dependent logging</h1>
 
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-22T03:52:37+01:00">
-                2020-02-22
-              </time>
-            
 
-            
 
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tips/" itemprop="url" rel="index">
-                    <span itemprop="name">tips</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+</header>
 
       
       
-
       
-        <p>You can combine compiler directives with <code>ConditionalAttribute</code> to filter your Debug output.</p>
+      <div class="post-body">
+        
+        
+          <p>You can combine compiler directives with <code>ConditionalAttribute</code> to filter your Debug output.</p>
 <a id="more"></a>
 <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Simple <code>Debug.Log()</code> statement is often the fastest way to understood when code is invoked and what parameters are passed to the methods. There’s a moments when you work with fubar code and want to use a lot of logging, but don’t want this logs in production builds. So maybe you know about the clever <a href="https://docs.unity3d.com/Manual/class-PlayerSettingsStandalone.html#Logging" target="_blank" rel="noopener">logging settings</a> delivered by Unity, so your logs will be disabled in production build.<br>But what if you have so many logs in your debug builds that they’re unreadable and logging affects performance to the level of game being unplayable?</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>I will go through few solutions I’ve been using the last few years.</p>
@@ -346,69 +262,15 @@
 <p>That works exactly like the conditional debugging with compilation flag, but instead using <code>#if</code> everytime we want to print some debug we can instead mark the method with attribute, and if the conditional flag (<code>DEBUG_MY_MODULE</code> in this example) is not set not only the method, but all calls to that method is taken out of compilation process.</p>
 <p>Remember to be careful when using conditional compilation - you can end up with so many flags and <code>#if</code>‘s so it could be hard to tell what code is compiled in what type of build.</p>
 
+        
+      </div>
+      
+      
       
     </div>
     
     
     
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/unity/" rel="tag"># unity</a>
-          
-            <a href="/tags/testing/" rel="tag"># testing</a>
-          
-            <a href="/tags/logging/" rel="tag"># logging</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2020/02/10/Test-serializaiton/" rel="next" title="Test serializaiton">
-                <i class="fa fa-chevron-left"></i> Test serializaiton
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-<% if(page.comments && theme.comments && theme.comments.gitment){ %>
-    <div id="gitment-comments"></div>    
-<% } %>
-    <div class="post-spread">
-      
-    </div>
   </div>
 
 
