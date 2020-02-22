@@ -119,6 +119,9 @@
   };
 </script>
 
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
 
 
   <link rel="canonical" href="https://zachipl.github.io/2020/01/19/Use-Reset-to-setup-your-components/"/>
@@ -392,7 +395,9 @@
   </article>
 
 
-
+<% if(page.comments && theme.comments && theme.comments.gitment){ %>
+    <div id="gitment-comments"></div>    
+<% } %>
     <div class="post-spread">
       
     </div>

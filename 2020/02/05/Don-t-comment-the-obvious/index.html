@@ -118,6 +118,9 @@
   };
 </script>
 
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+
 
 
   <link rel="canonical" href="https://zachipl.github.io/2020/02/05/Don-t-comment-the-obvious/"/>
@@ -411,7 +414,9 @@
   </article>
 
 
-
+<% if(page.comments && theme.comments && theme.comments.gitment){ %>
+    <div id="gitment-comments"></div>    
+<% } %>
     <div class="post-spread">
       
     </div>
