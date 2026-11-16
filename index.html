@@ -1,919 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Szymon Zachara — Unity game developer, technical lead and co-designer with 10+ years of experience across mobile, PC and VR games.">
+<meta property="og:title" content="Szymon Zachara | Unity Game Developer">
+<meta property="og:description" content="Selected games, roles, and development experience across mobile, PC and VR.">
+<title>Szymon Zachara — Unity Game Developer | Portfolio</title>
+<style>
+:root{--bg:#0b1015;--surface:#131b22;--panel:#19232b;--line:#2b3840;--text:#f4f6f5;--muted:#a4b1b5;--accent:#b4f0c9;--yellow:#f5d59b;--radius:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{background:var(--bg);color:var(--text);font-family:Inter,"Segoe UI",Arial,sans-serif;margin:0;line-height:1.55;-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:4px}.shell{max-width:1160px;padding:0 32px;margin:0 auto}.micro{font-size:11px;letter-spacing:.17em;font-weight:750;text-transform:uppercase;color:var(--accent)}
+.header{position:sticky;top:0;z-index:100;background:rgba(11,16,21,.91);backdrop-filter:blur(14px);border-bottom:1px solid rgba(208,228,223,.1)}.header-in{display:flex;align-items:center;justify-content:space-between;min-height:74px}.brand{display:flex;gap:13px;align-items:center;font-size:15px;font-weight:700;letter-spacing:-.02em}.monogram{height:38px;width:38px;display:flex;align-items:center;justify-content:center;border:1px solid #4f765d;background:#20372d;color:#c0f4cf;border-radius:10px;font-size:13px}.nav{display:flex;gap:28px;color:#c9d2d2;font-size:13px}.nav a:hover{color:var(--accent)}.small-button{padding:10px 16px;border-radius:8px;background:var(--accent);color:#111b17;font-weight:800;font-size:12px}
+.hero{padding:95px 0 78px;display:grid;grid-template-columns:1.3fr .7fr;gap:65px;align-items:center}.signal{display:inline-flex;align-items:center;gap:10px;border:1px solid #2b5340;background:#12231a;border-radius:100px;padding:8px 14px;font-size:11px;letter-spacing:.05em;color:#a9efba;font-weight:700}.signal-dot{width:6px;height:6px;background:#8ae2a7;border-radius:100%}.hero h1{font-size:clamp(52px,7vw,96px);font-weight:800;letter-spacing:-.065em;line-height:.98;margin:28px 0 20px}.hero h1 em{font-weight:500;font-style:normal;color:var(--accent)}.hero .sub{max-width:630px;font-size:18px;line-height:1.75;color:#bdc7c9}.hero-actions{margin-top:29px;display:flex;gap:11px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;border-radius:9px;padding:14px 21px;font-size:13px;font-weight:800;border:1px solid #4b5b5f;transition:transform .15s,background .15s}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--accent);color:#102019;border-color:var(--accent)}.btn-outline{background:transparent}.hero-panel{min-height:350px;border-radius:20px;border:1px solid #365348;background:radial-gradient(circle at 84% 14%,rgba(142,230,175,.17),transparent 36%),linear-gradient(145deg,#1b3327 0%,#10211e 52%,#141b22 100%);display:flex;flex-direction:column;justify-content:space-between;padding:30px;position:relative;overflow:hidden}.hero-panel:after{content:"";width:250px;height:250px;border:1px solid rgba(173,239,192,.15);border-radius:50%;position:absolute;right:-85px;top:90px;box-shadow:0 0 0 55px rgba(173,239,192,.03),0 0 0 110px rgba(173,239,192,.025)}.hero-panel .panel-title{font-size:13px;color:#b0ddc1;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.hero-panel .big{font-size:67px;line-height:1;letter-spacing:-.07em;font-weight:820}.hero-panel .big span{color:var(--accent)}.hero-panel .panel-foot{display:grid;grid-template-columns:1fr 1fr;gap:20px;color:#cbd7d0;font-size:12px}.panel-foot b{font-size:14px;color:white;display:block;margin-bottom:2px}
+.statline{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding:28px 0;margin-bottom:90px}.stat{text-align:center}.stat strong{font-size:29px;letter-spacing:-.04em;display:block;line-height:1.2}.stat span{font-size:12px;color:var(--muted)}
+.section-top{display:flex;justify-content:space-between;align-items:end;gap:24px;margin:0 0 30px}.section-top h2{font-size:clamp(32px,4vw,47px);font-weight:800;line-height:1.1;letter-spacing:-.05em;margin:10px 0 0}.section-top p{max-width:400px;font-size:13px;color:var(--muted)}.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}.filter{padding:8px 15px;background:#121a20;color:#b1bdbe;border:1px solid #2a3840;border-radius:8px;font-weight:700;cursor:pointer;font-size:12px}.filter.active{background:var(--accent);border-color:var(--accent);color:#15261d}.filter:hover:not(.active){background:#1d2b32}.projects{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.project-card{overflow:hidden;background:var(--surface);border:1px solid #2c373e;border-radius:var(--radius);transition:transform .2s,border-color .2s}.project-card:hover{transform:translateY(-3px);border-color:#58756b}.project-card.hidden{display:none}.project-cover{height:242px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:linear-gradient(120deg,#172a37,#394a66)}.project-cover img{height:100%;width:100%;object-fit:cover;object-position:center;position:absolute;inset:0;z-index:2}.project-cover img.icon-art{width:130px;height:130px;left:auto;right:40px;top:50%;transform:translateY(-50%);border-radius:24px;box-shadow:0 20px 55px #0910158a;object-fit:cover}.project-cover .cover-fallback{position:absolute;z-index:1;left:26px;bottom:22px;color:#fff;font-size:clamp(27px,3vw,40px);font-weight:850;letter-spacing:-.055em;line-height:1.08;text-shadow:0 5px 28px #0009;max-width:70%}.project-cover img:not(.icon-art)~.cover-fallback{opacity:0}.project-cover img.icon-art~.cover-fallback{max-width:45%}.project-cover .cover-arrow{position:absolute;z-index:3;right:17px;top:16px;width:35px;height:35px;display:flex;align-items:center;justify-content:center;background:#081319ab;border:1px solid #ffffff55;border-radius:50%;font-size:20px}.project-card.violet .project-cover{background:radial-gradient(circle at 80% 20%,#6d5a91,#25223e 55%,#161e35)}.project-card.coral .project-cover{background:radial-gradient(circle at 75% 40%,#a56a81,#39304e 60%,#1a2230)}.project-card.sky .project-cover{background:linear-gradient(120deg,#2b637f,#b8c1a2)}.project-card.leaf .project-cover{background:linear-gradient(120deg,#436b55,#c0b887)}.project-card.mint .project-cover{background:radial-gradient(circle at 75% 40%,#319b8b,#174746)}.project-card.amber .project-cover{background:linear-gradient(120deg,#5d532f,#31453b)}.project-card.steel .project-cover{background:linear-gradient(120deg,#283b3e,#717776)}.project-card.ocean .project-cover{background:linear-gradient(120deg,#264f62,#1e354e)}.project-body{padding:24px 26px 25px}.card-meta{display:flex;align-items:center;justify-content:space-between;gap:20px;font-size:11px;letter-spacing:.06em;color:#a1b0af;text-transform:uppercase;font-weight:700}.name-line{margin-top:15px;display:flex;align-items:center;flex-wrap:wrap;gap:12px}.name-line h3{margin:0;font-size:25px;letter-spacing:-.045em;font-weight:800}.role-pill{font-size:10px;letter-spacing:.02em;font-weight:800;color:#a6e5b9;background:#1a3125;border:1px solid #2f513a;padding:6px 9px;border-radius:5px}.project-body p{color:#abb9ba;font-size:14px;line-height:1.7;margin:13px 0 24px;min-height:48px}.project-link{font-size:12px;font-weight:800;color:var(--accent);border-bottom:1px solid #406b51;padding-bottom:5px}.project-link span{padding-left:7px}.project-link:hover{color:#fff}
+.capabilities{margin-top:105px;padding:0 0 90px}.cap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.cap{background:#141e24;border:1px solid #2b3c41;padding:26px;border-radius:14px;min-height:195px}.cap .cap-number{font-size:11px;color:#8ab89b;letter-spacing:.13em;font-weight:800}.cap h3{font-size:19px;margin:22px 0 7px;letter-spacing:-.03em}.cap p{color:#abb9b8;font-size:13px;line-height:1.75;margin:0}.tool-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:27px}.chip{font-size:12px;border:1px solid #394a50;color:#c9d5d2;border-radius:7px;padding:8px 12px;background:#172126}
+.contact{border-top:1px solid #314439;background:linear-gradient(130deg,#10241b,#111c22);padding:70px 0 75px}.contact-inner{display:flex;align-items:center;justify-content:space-between;gap:40px}.contact h2{font-size:clamp(31px,4vw,46px);line-height:1.15;margin:10px 0;letter-spacing:-.05em}.contact p{color:#b3c5bd;max-width:520px;font-size:14px}.footer{border-top:1px solid #2a3836;padding:22px 0;background:#0f191b;color:#8e9da0;font-size:11px}.foot-row{display:flex;justify-content:space-between;gap:12px}.credit{color:#94a2a4}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding:65px 0 48px;gap:24px}.hero-panel{min-height:260px}.cap-grid{grid-template-columns:1fr 1fr}.hero h1{font-size:72px}.contact-inner{align-items:start;flex-direction:column}}@media(max-width:630px){.shell{padding:0 18px}.header-in{min-height:64px}.nav{gap:14px}.nav a:first-child{display:none}.small-button{padding:9px 12px}.hero h1{font-size:clamp(49px,13vw,70px)}.hero .sub{font-size:15px}.statline{gap:7px;margin-bottom:65px}.stat strong{font-size:23px}.stat span{font-size:10px}.section-top{display:block}.section-top p{margin-top:15px}.projects{grid-template-columns:1fr;gap:16px}.project-cover{height:195px}.project-body{padding:21px}.name-line h3{font-size:22px}.cap-grid{grid-template-columns:1fr}.capabilities{margin-top:70px}.contact{padding:50px 0}.foot-row{flex-direction:column}.hero-panel .big{font-size:55px}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
 
-<link rel="stylesheet" href="/css/main.css">
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-
-<script id="hexo-configurations">
-    var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"zachipl.github.io","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"gitment":{"clientId":"d016308181e59568b5e0","clientSecret":"c306e5929cc88d4510dd2561c7d41e235bec016e"},"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
-  </script>
-
-  <meta name="description" content="Here are only some tips on how to make your Unity gamedev life easier">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Some coding tips">
-<meta property="og:url" content="https://zachipl.github.io/index.html">
-<meta property="og:site_name" content="Some coding tips">
-<meta property="og:description" content="Here are only some tips on how to make your Unity gamedev life easier">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Szymon Zachara">
-<meta property="article:tag" content="Unity">
-<meta property="article:tag" content=" C#">
-<meta property="article:tag" content=" Gamedev">
-<meta property="article:tag" content=" Programming tips">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://zachipl.github.io/">
-
-
-<script id="page-configurations">
-  // https://hexo.io/docs/variables.html
-  CONFIG.page = {
-    sidebar: "",
-    isHome: true,
-    isPost: false
-  };
-</script>
-
-  <title>Some coding tips</title>
-  
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-header { opacity: initial; }
-
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
-    <div class="headband"></div>
-
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="Toggle navigation bar">
-      <span class="toggle-line toggle-line-first"></span>
-      <span class="toggle-line toggle-line-middle"></span>
-      <span class="toggle-line toggle-line-last"></span>
-    </div>
-  </div>
-
-  <div class="site-meta">
-
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Some coding tips</span>
-        <span class="logo-line-after"><i></i></span>
+/* Project-specific image backdrops. Artwork is reused from each project's cover. */
+.project-card{isolation:isolate;box-shadow:0 12px 36px rgba(0,0,0,.13)}
+.project-cover{border-bottom:1px solid rgba(221,244,239,.13)}
+.project-cover::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,transparent 55%,rgba(6,12,17,.52) 100%)}
+.project-cover .cover-arrow{z-index:4}
+.project-body{position:relative;isolation:isolate;overflow:hidden;background:#10191f}
+.project-body::before{content:"";position:absolute;z-index:0;inset:-18px;pointer-events:none;background-image:var(--tile-art,none);background-position:center;background-size:cover;background-repeat:no-repeat;filter:blur(13px) saturate(1.13);opacity:.5;transform:scale(1.04);transition:opacity .35s ease,transform .4s ease}
+.project-body::after{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:linear-gradient(130deg,rgba(11,18,24,.82),rgba(13,20,26,.87) 48%,rgba(9,16,21,.94))}
+.project-body>*{position:relative;z-index:2}
+.project-card:hover .project-body::before{opacity:.69;transform:scale(1.12)}
+.project-card:hover .project-cover img:not(.icon-art){transform:scale(1.035)}
+.project-cover img:not(.icon-art){transition:transform .4s ease}
+@media (prefers-reduced-motion:reduce){.project-card:hover .project-body::before,.project-card:hover .project-cover img:not(.icon-art){transform:none}}
+</style></head>
+<body>
+<header class="header"><div class="shell header-in"><a class="brand" href="#home" aria-label="Szymon Zachara home"><span class="monogram">SZ</span>Szymon Zachara</a><nav class="nav" aria-label="Main navigation"><a href="#work">Work</a><a href="#expertise">Expertise</a><a href="mailto:szymonzachara@gmail.com" class="small-button">Get in touch ↗</a></nav></div></header>
+<main id="home"><div class="shell"><section class="hero" aria-label="Introduction"><div><div class="signal"><span class="signal-dot"></span> UNITY · C# · MOBILE · PC · VR</div><h1>Szymon<br><em>Zachara.</em></h1><div class="micro">Unity game developer · Technical lead</div><p class="sub">10+ years developing commercial games — from mobile RPGs and match-3 puzzles to simulation, strategy and VR. I combine hands-on engineering, technical leadership and experience working with game designers, with AI-assisted development using Claude Code and OpenAI Codex.</p><div class="hero-actions"><a class="btn btn-primary" href="#work">Explore selected work <span>↓</span></a><a class="btn btn-outline" href="mailto:szymonzachara@gmail.com">Contact me ↗</a></div></div><aside class="hero-panel" aria-label="Portfolio overview"><div class="panel-title">Selected shipped & developed games</div><div class="big">08<span>.</span></div><div class="panel-foot"><div><b>3 platforms</b>Mobile, PC & VR</div><div><b>Multiple roles</b>Developer, lead & co-designer</div></div></aside></section>
+<section class="statline" aria-label="At a glance"><div class="stat"><strong>10+ years</strong><span>Commercial game development</span></div><div class="stat"><strong>Mobile-first experience</strong><span>Android & iOS projects</span></div><div class="stat"><strong>AI-assisted workflows</strong><span>Claude Code · OpenAI Codex</span></div></section>
+<section id="work" aria-label="Selected work"><div class="section-top"><div><div class="micro">01 / Portfolio</div><h2>Selected work<span style="color:var(--accent)">.</span></h2></div><p>My contributions to these team-built games ranged from gameplay and UI development to technical leadership and co-design. Each card specifies my role.</p></div><div class="filters" role="group" aria-label="Filter games by platform"><button class="filter active" type="button" data-filter="All" aria-pressed="true">All projects <span>08</span></button><button class="filter" type="button" data-filter="Mobile" aria-pressed="false">Mobile <span>03</span></button><button class="filter" type="button" data-filter="PC" aria-pressed="false">PC <span>04</span></button><button class="filter" type="button" data-filter="VR" aria-pressed="false">VR <span>01</span></button></div>
+<div class="projects"><article class="project-card violet" data-platform="Mobile" id="questland" style="--tile-art:url(&#x27;https://play-lh.googleusercontent.com/oxXaY9vOzpfpZIzXaela7lbsBvoVbxjsGHQ8M6hbv4c87cwjezSS5MKnwWsg-u8UXB1uOJtwswcJfLPQjKvkJak=w512-h512&#x27;)">
+      <a class="project-cover" href="https://play.google.com/store/apps/details?id=com.gamesture.questland" target="_blank" rel="noopener noreferrer" aria-label="View Questland at its official product page">
+        <img class="project-image icon-art" loading="lazy" src="https://play-lh.googleusercontent.com/oxXaY9vOzpfpZIzXaela7lbsBvoVbxjsGHQ8M6hbv4c87cwjezSS5MKnwWsg-u8UXB1uOJtwswcJfLPQjKvkJak=w512-h512" alt="Official game art for Questland" onerror="this.remove()"><span class="cover-fallback">Questland</span><span class="cover-arrow" aria-hidden="true">↗</span>
       </a>
-    </div>
-        <p class="site-subtitle">written by old freaky dev</p>
-  </div>
-
-  <div class="site-nav-right"></div>
-</div>
-
-
-<nav class="site-nav">
-  
-  <ul id="menu" class="menu">
-        <li class="menu-item menu-item-home">
-
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
-
-  </li>
-  </ul>
-
-</nav>
-</div>
-    </header>
-
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-
-    <main class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-
-          <div class="content">
-            
-
-  <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/04/12/Colo-Clear-is-actually-dirty-1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="Here are only some tips on how to make your Unity gamedev life easier">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/12/Colo-Clear-is-actually-dirty-1/" class="post-title-link" itemprop="url">Color.Clear is actually dirty</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-04-12 20:23:53" itemprop="dateCreated datePublished" datetime="2020-04-12T20:23:53+02:00">2020-04-12</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tips/" itemprop="url" rel="index">
-                    <span itemprop="name">tips</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>When you fade your sprites or images, you could consider something better than <code>Color.Clear</code>.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/12/Colo-Clear-is-actually-dirty-1/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/02/22/Compilation-dependent-logging/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="Here are only some tips on how to make your Unity gamedev life easier">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/22/Compilation-dependent-logging/" class="post-title-link" itemprop="url">Compilation dependent logging</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-02-22 03:52:37 / Modified: 04:58:00" itemprop="dateCreated datePublished" datetime="2020-02-22T03:52:37+01:00">2020-02-22</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tips/" itemprop="url" rel="index">
-                    <span itemprop="name">tips</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>You can combine compiler directives with <code>ConditionalAttribute</code> to filter your Debug output.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/22/Compilation-dependent-logging/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/02/10/Test-serializaiton/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="Here are only some tips on how to make your Unity gamedev life easier">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/10/Test-serializaiton/" class="post-title-link" itemprop="url">Test serializaiton</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-10 19:17:30" itemprop="dateCreated datePublished" datetime="2020-02-10T19:17:30+01:00">2020-02-10</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>You can check if your datas are serialized and deserialized with very little code.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/10/Test-serializaiton/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/02/05/Don-t-comment-the-obvious/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="Here are only some tips on how to make your Unity gamedev life easier">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/02/05/Don-t-comment-the-obvious/" class="post-title-link" itemprop="url">Don't comment the obvious code</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-02-05 17:19:29 / Modified: 18:17:44" itemprop="dateCreated datePublished" datetime="2020-02-05T17:19:29+01:00">2020-02-05</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tips/" itemprop="url" rel="index">
-                    <span itemprop="name">tips</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>In fact, you should write as little comments as possible.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/02/05/Don-t-comment-the-obvious/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/01/26/Test-by-ContextMenuItem/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="Here are only some tips on how to make your Unity gamedev life easier">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/26/Test-by-ContextMenuItem/" class="post-title-link" itemprop="url">Test by ContextMenuItem</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-01-26 07:26:34 / Modified: 07:33:11" itemprop="dateCreated datePublished" datetime="2020-01-26T07:26:34+01:00">2020-01-26</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tips/" itemprop="url" rel="index">
-                    <span itemprop="name">tips</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>You can call <code>MonoBehaviour</code> method in Inspector by adding it’s property Context Menu.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/26/Test-by-ContextMenuItem/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/01/23/Mark-unused-classes-as-Obsolete/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="Here are only some tips on how to make your Unity gamedev life easier">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/23/Mark-unused-classes-as-Obsolete/" class="post-title-link" itemprop="url">Mark unused classes as Obsolete</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-01-23 10:06:01 / Modified: 20:44:05" itemprop="dateCreated datePublished" datetime="2020-01-23T10:06:01+01:00">2020-01-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tips/" itemprop="url" rel="index">
-                    <span itemprop="name">tips</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>The <code>Obsolete</code> attrbute marks <code>MonoBehaviour</code> classes in Inspector.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/23/Mark-unused-classes-as-Obsolete/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/01/19/Use-Reset-to-setup-your-components/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="Here are only some tips on how to make your Unity gamedev life easier">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/19/Use-Reset-to-setup-your-components/" class="post-title-link" itemprop="url">Use Reset to setup your components</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-19 09:46:48" itemprop="dateCreated datePublished" datetime="2020-01-19T09:46:48+01:00">2020-01-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-23 20:44:12" itemprop="dateModified" datetime="2020-01-23T20:44:12+01:00">2020-01-23</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tips/" itemprop="url" rel="index">
-                    <span itemprop="name">tips</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>The <a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.Reset.html" target="_blank" rel="noopener"><code>Reset</code> Unity message</a> can be used to setup <code>SerializeField</code> fields of your prefabs.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/19/Use-Reset-to-setup-your-components/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://zachipl.github.io/2020/01/19/Why-this-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Szymon Zachara">
-      <meta itemprop="description" content="Here are only some tips on how to make your Unity gamedev life easier">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Some coding tips">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/19/Why-this-blog/" class="post-title-link" itemprop="url">Why this blog</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-01-19 07:04:20 / Modified: 22:52:31" itemprop="dateCreated datePublished" datetime="2020-01-19T07:04:20+01:00">2020-01-19</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Who-am-I"><a href="#Who-am-I" class="headerlink" title="Who am I"></a>Who am I</h2><p>Well, I’m a gameplay developer. Writing mostly mobile games in Unity engine for the last few years, but with a wide background - I’ve worked in various technologies, from <em>PHP</em> + <em>MySQL</em> to <em>JEE</em> with <em>Oracle Database</em> in my years before I became full-time gamedeveloper.</p>
-<h2 id="Why-I’m-blogging"><a href="#Why-I’m-blogging" class="headerlink" title="Why I’m blogging"></a>Why I’m blogging</h2><p>I didn’t really ever feel like I had something to <em>teach</em> other programmers. Never have I worked on a big title or any successfull game you heard about, and when I switched from <em>serious IT</em> to gamedev in 2015 I had lot to learn myself, but in time I found the <em>serious IT</em> gave me some unique skills in writing smoother code and planning better game code architecture. So I was the one with <em>magical skills learned in other industry</em>, and that skills prove to be very useful also in gamedev.</p>
-<ol>
-<li><p>I really want to have that place in web where I can post some trick and when talking about it to some other programmer just throw him or her a link. Yes, there are lot of pages with tricks like that, some of them even specializes in Unity tricks or Gamedev good practices, but on my site I can post my knowledge, place it in my context. My place, my rulse.</p>
-</li>
-<li><p>I am also still learning a lot. And some of my technics may be seen as controversial. I will be happy to discuss them with someone, maybe learn a better way of doing something. I like to be challenged, some things I’ve learn by looking at others code, criticize it and then hear the explanation why someone write things that way, and it was eye-opener. Feel free to ask <em>why that way</em>, when you see I wrote something strange, stupid or controversial.</p>
-</li>
-<li><p>For fame, of course …</p>
-</li>
-<li><p>I am planning to leave my comfort zone some time in the close future. I’m not good at shaders or physics programming and I want to have some place to practice. Probably I will tag this posts or place them in some special category, so it wont be mistaken with tips and good practies. I just think maybe I may receive some helping feedback or force myself to better work when I’m writing something destined to be placed online.</p>
-</li>
-<li><p>Few years ago, in my <em>before-gamedev</em> era I was quite good webdeveloper. Webdev evolved very fast the last few years and my skills became obsolete, but I like to be sure that I can post something online when needed, created some simple page, not became totally disconnected from webdev skills. Well - some hexo blog with premade template is not a lot but it’s more than nothing.</p>
-</li>
-</ol>
-<h2 id="So-what-I-will-blog-about"><a href="#So-what-I-will-blog-about" class="headerlink" title="So what I will blog about"></a>So what I will blog about</h2><p>You’ll see. I have some posts in mind, most of them are simple Unity tricks, sometimes with explanation how I discovered them and what problem they solve.</p>
-<p>But nothing is set in stone. You’ll see. And I’ll see too.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-  </div>
-
-  
-
-
-
-          </div>
-          
-
+      <div class="project-body"><div class="card-meta"><span>Turn-based RPG</span><span>Android</span></div>
+      <div class="name-line"><h3>Questland</h3><span class="role-pill">UI · Gameplay Systems · Designer Tools</span></div>
+      <p>Contributed to player-facing UI, gameplay mechanics and tools used by game designers on a live mobile RPG.</p><a class="project-link" href="https://play.google.com/store/apps/details?id=com.gamesture.questland" target="_blank" rel="noopener noreferrer">View on Google Play <span aria-hidden="true">↗</span></a></div>
+    </article>
+<article class="project-card coral" data-platform="Mobile" id="project-fame" style="--tile-art:url(&#x27;https://i.ytimg.com/vi/EyeYiyO8iuM/hqdefault.jpg&#x27;)">
+      <a class="project-cover" href="https://www.youtube.com/watch?v=EyeYiyO8iuM" target="_blank" rel="noopener noreferrer" aria-label="View Project Fame at its official product page">
+        <img class="project-image " loading="lazy" src="https://i.ytimg.com/vi/EyeYiyO8iuM/hqdefault.jpg" alt="Official game art for Project Fame" onerror="this.remove()"><span class="cover-fallback">Project Fame</span><span class="cover-arrow" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body"><div class="card-meta"><span>Mobile game</span><span>Android · iOS</span></div>
+      <div class="name-line"><h3>Project Fame</h3><span class="role-pill">Lead Developer</span></div>
+      <p>Led development of a mobile title targeting Android and iOS. A public trailer is available as a project reference.</p><a class="project-link" href="https://www.youtube.com/watch?v=EyeYiyO8iuM" target="_blank" rel="noopener noreferrer">Watch trailer <span aria-hidden="true">↗</span></a></div>
+    </article>
+<article class="project-card sky" data-platform="PC" id="panorama" style="--tile-art:url(&#x27;https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1730250/header.jpg?t=1793270181&#x27;)">
+      <a class="project-cover" href="https://store.steampowered.com/app/1730250/Panorama/" target="_blank" rel="noopener noreferrer" aria-label="View Pan&#x27;orama at its official product page">
+        <img class="project-image " loading="lazy" src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1730250/header.jpg?t=1793270181" alt="Official game art for Pan&#x27;orama" onerror="this.remove()"><span class="cover-fallback">Pan&#x27;orama</span><span class="cover-arrow" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body"><div class="card-meta"><span>City-building puzzle</span><span>PC · Steam</span></div>
+      <div class="name-line"><h3>Pan&#x27;orama</h3><span class="role-pill">Lead Developer · Co-Designer</span></div>
+      <p>Led development and co-designed a relaxing tile-based city-building game.</p><a class="project-link" href="https://store.steampowered.com/app/1730250/Panorama/" target="_blank" rel="noopener noreferrer">View on Steam <span aria-hidden="true">↗</span></a></div>
+    </article>
+<article class="project-card leaf" data-platform="PC" id="no-place-like-home" style="--tile-art:url(&#x27;https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1472660/header.jpg?t=1792437002&#x27;)">
+      <a class="project-cover" href="https://store.steampowered.com/app/1472660/No_Place_Like_Home/" target="_blank" rel="noopener noreferrer" aria-label="View No Place Like Home at its official product page">
+        <img class="project-image " loading="lazy" src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1472660/header.jpg?t=1792437002" alt="Official game art for No Place Like Home" onerror="this.remove()"><span class="cover-fallback">No Place Like Home</span><span class="cover-arrow" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body"><div class="card-meta"><span>Farming &amp; exploration</span><span>PC · Steam</span></div>
+      <div class="name-line"><h3>No Place Like Home</h3><span class="role-pill">Lead Developer</span></div>
+      <p>Served as lead developer on a 3D farming, crafting and environmental-restoration adventure.</p><a class="project-link" href="https://store.steampowered.com/app/1472660/No_Place_Like_Home/" target="_blank" rel="noopener noreferrer">View on Steam <span aria-hidden="true">↗</span></a></div>
+    </article>
+<article class="project-card mint" data-platform="Mobile" id="animatch" style="--tile-art:url(&#x27;https://play-lh.googleusercontent.com/dWtwv-MY3F17xysRyMn19ErD6PnO2A6Cj7gHgjTpG-3RpQvMTAxJv8S2kPamwUg787hkB-rqqtRFVk7-OPmjMeY=w512-h512&#x27;)">
+      <a class="project-cover" href="https://play.google.com/store/apps/details?id=eu.gamedesire.animatch" target="_blank" rel="noopener noreferrer" aria-label="View Animatch Friends at its official product page">
+        <img class="project-image icon-art" loading="lazy" src="https://play-lh.googleusercontent.com/dWtwv-MY3F17xysRyMn19ErD6PnO2A6Cj7gHgjTpG-3RpQvMTAxJv8S2kPamwUg787hkB-rqqtRFVk7-OPmjMeY=w512-h512" alt="Official game art for Animatch Friends" onerror="this.remove()"><span class="cover-fallback">Animatch Friends</span><span class="cover-arrow" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body"><div class="card-meta"><span>Match-3 puzzle</span><span>Android</span></div>
+      <div class="name-line"><h3>Animatch Friends</h3><span class="role-pill">Developer</span></div>
+      <p>Developer on an Android match-3 puzzle game featuring collectible animal characters.</p><a class="project-link" href="https://play.google.com/store/apps/details?id=eu.gamedesire.animatch" target="_blank" rel="noopener noreferrer">View on Google Play <span aria-hidden="true">↗</span></a></div>
+    </article>
+<article class="project-card amber" data-platform="PC" id="timberborn" style="--tile-art:url(&#x27;https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1062090/eeb2babf15cbf4ebc175316a5d3e42a060f3d97c/header.jpg?t=1788438437&#x27;)">
+      <a class="project-cover" href="https://store.steampowered.com/app/1062090/Timberborn/" target="_blank" rel="noopener noreferrer" aria-label="View Timberborn at its official product page">
+        <img class="project-image " loading="lazy" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1062090/eeb2babf15cbf4ebc175316a5d3e42a060f3d97c/header.jpg?t=1788438437" alt="Official game art for Timberborn" onerror="this.remove()"><span class="cover-fallback">Timberborn</span><span class="cover-arrow" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body"><div class="card-meta"><span>Colony builder</span><span>PC · Steam</span></div>
+      <div class="name-line"><h3>Timberborn</h3><span class="role-pill">Developer</span></div>
+      <p>Contributed as a developer to a systemic colony-building and resource-management game.</p><a class="project-link" href="https://store.steampowered.com/app/1062090/Timberborn/" target="_blank" rel="noopener noreferrer">View on Steam <span aria-hidden="true">↗</span></a></div>
+    </article>
+<article class="project-card steel" data-platform="VR" id="tracked" style="--tile-art:url(&#x27;https://prowly-prod.s3.eu-west-1.amazonaws.com/uploads/landing_page/template_background/418524/21d0b6028b2f959c5cb7625721b5d671.jpg&#x27;)">
+      <a class="project-cover" href="https://www.meta.com/experiences/tracked-shoot-to-survive/8676898262323631/" target="_blank" rel="noopener noreferrer" aria-label="View TRACKED: Shoot to Survive at its official product page">
+        <img class="project-image " loading="lazy" src="https://prowly-prod.s3.eu-west-1.amazonaws.com/uploads/landing_page/template_background/418524/21d0b6028b2f959c5cb7625721b5d671.jpg" alt="Official game art for TRACKED: Shoot to Survive" onerror="this.remove()"><span class="cover-fallback">TRACKED: Shoot to Survive</span><span class="cover-arrow" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body"><div class="card-meta"><span>VR survival shooter</span><span>Meta Quest</span></div>
+      <div class="name-line"><h3>TRACKED: Shoot to Survive</h3><span class="role-pill">Developer</span></div>
+      <p>Contributed as a developer to an immersive action-survival game built for Meta Quest.</p><a class="project-link" href="https://www.meta.com/experiences/tracked-shoot-to-survive/8676898262323631/" target="_blank" rel="noopener noreferrer">View on Meta <span aria-hidden="true">↗</span></a></div>
+    </article>
+<article class="project-card ocean" data-platform="PC" id="captain-pawsome" style="--tile-art:url(&#x27;https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551000/header.jpg?t=1793270160&#x27;)">
+      <a class="project-cover" href="https://store.steampowered.com/app/1551000/Captain_Pawsome/" target="_blank" rel="noopener noreferrer" aria-label="View Captain Pawsome at its official product page">
+        <img class="project-image " loading="lazy" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/1551000/header.jpg?t=1793270160" alt="Official game art for Captain Pawsome" onerror="this.remove()"><span class="cover-fallback">Captain Pawsome</span><span class="cover-arrow" aria-hidden="true">↗</span>
+      </a>
+      <div class="project-body"><div class="card-meta"><span>Cozy fishing adventure</span><span>PC · Steam</span></div>
+      <div class="name-line"><h3>Captain Pawsome</h3><span class="role-pill">Developer</span></div>
+      <p>Developer on a 2D fishing and exploration game with upgrades, crafting and shop management.</p><a class="project-link" href="https://store.steampowered.com/app/1551000/Captain_Pawsome/" target="_blank" rel="noopener noreferrer">View on Steam <span aria-hidden="true">↗</span></a></div>
+    </article></div></section>
+<section id="expertise" class="capabilities" aria-label="Experience and toolkit"><div class="section-top"><div><div class="micro">02 / Approach</div><h2>What I bring<span style="color:var(--accent)">.</span></h2></div><p>Broad engineering experience with a particular focus on building practical systems that help games move forward.</p></div><div class="cap-grid"><div class="cap"><div class="cap-number">01 · DEVELOPMENT</div><h3>Unity & gameplay systems</h3><p>C# and Unity engineering for gameplay features, UI, tools and production-scale game systems.</p></div><div class="cap"><div class="cap-number">02 · COLLABORATION</div><h3>Leadership & game design</h3><p>Experience as a lead developer and technical lead, including co-design work on Pan'orama and tooling for designers on Questland.</p></div><div class="cap"><div class="cap-number">03 · WORKFLOW</div><h3>AI-assisted development</h3><p>I use Claude Code and OpenAI Codex in my Unity development workflow. AI complements engineering judgment, code review and iteration.</p></div></div><div class="tool-row" aria-label="Skills"><span class="chip">Unity</span><span class="chip">C#</span><span class="chip">Android / iOS</span><span class="chip">PC / Steam</span><span class="chip">Meta Quest</span><span class="chip">Gameplay</span><span class="chip">UI / UX implementation</span><span class="chip">Designer tools</span><span class="chip">Technical leadership</span><span class="chip">Claude Code</span><span class="chip">OpenAI Codex</span></div></section></div></main>
+<section class="contact" id="contact"><div class="shell contact-inner"><div><div class="micro">03 / Contact</div><h2>Let's build the next game.</h2><p>Interested in Unity development, mobile game production, rapid prototyping and teams adopting AI-assisted workflows.</p></div><a class="btn btn-primary" href="mailto:szymonzachara@gmail.com">szymonzachara@gmail.com ↗</a></div></section>
+<footer class="footer"><div class="shell foot-row"><div>© 2026 Szymon Zachara. Portfolio of work on collaborative commercial projects.</div><div class="credit">Game names and artwork belong to their respective owners.</div></div></footer>
 <script>
-  window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      let commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-        </div>
-          
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line toggle-line-first"></span>
-    <span class="toggle-line toggle-line-middle"></span>
-    <span class="toggle-line toggle-line-last"></span>
-  </div>
-
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-      </div>
-      <!--/noindex-->
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">Szymon Zachara</p>
-  <div class="site-description" itemprop="description">Here are only some tips on how to make your Unity gamedev life easier</div>
-</div>
-<div class="site-state-wrap motion-element">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">8</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">1</span>
-        <span class="site-state-item-name">categories</span>
-      </div>
-      <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">tags</span>
-      </div>
-  </nav>
-</div>
-
-
-
-      </div>
-
-    </div>
-  </aside>
-  <div id="sidebar-dimmer"></div>
-
-
-      </div>
-    </main>
-
-    <footer class="footer">
-      <div class="footer-inner">
-        
-
-<div class="copyright">
-  
-  &copy; 
-  <span itemprop="copyrightYear">2020</span>
-  <span class="with-love">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Szymon Zachara</span>
-</div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
-  </div>
-  <span class="post-meta-divider">|</span>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
-  </div>
-
-        
-
-
-
-
-
-
-
-
-      </div>
-    </footer>
-  </div>
-
-  
-  <script src="/lib/anime.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
-
-<script src="/js/utils.js"></script>
-
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/muse.js"></script>
-
-
-<script src="/js/next-boot.js"></script>
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  
-
-
-</body>
-</html>
+(function(){const buttons=[...document.querySelectorAll('[data-filter]')],cards=[...document.querySelectorAll('.project-card')];buttons.forEach(button=>button.addEventListener('click',()=>{const v=button.dataset.filter;buttons.forEach(b=>{const active=b===button;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});cards.forEach(card=>card.classList.toggle('hidden',v!=='All'&&card.dataset.platform!==v));}));})();
+</script></body></html>
